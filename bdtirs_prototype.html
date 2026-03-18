@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Digital Transparency and Incident Reporting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .report-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barangay Digital Transparency and Incident Reporting System</h1>
+    <div class="report-form">
+        <h2>Report an Incident</h2>
+        <form id="incidentForm">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="details">Incident Details:</label>
+                <textarea id="details" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Report</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('incidentForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            const name = document.getElementById('name').value;
+            const details = document.getElementById('details').value;
+
+            // Here you can handle the report submission, e.g., send to a server
+            console.log(`Report submitted by ${name}: ${details}`);
+            alert('Thank you for your report!');
+        };
+    </script>
+</body>
+</html>
